@@ -31,7 +31,4 @@ Le lien se trouve [ici](./accessibility-dev-2.md)
   - ressources
 Le lien se trouve [ici](./accessibility-dev-3.md)
 
-accessibility-dev-2.md
-
-accessibility-dev-3.md
 
