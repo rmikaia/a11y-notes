@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="fr" r>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil | www.mapage.com</title>
+    <style>
+      .sr-only {
+        border: 0 !important;
+        clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+        -webkit-clip-path: inset(50%) !important;
+        clip-path: inset(50%) !important; /* 2 */
+        height: 1px !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        padding: 0 !important;
+        position: absolute !important;
+        width: 1px !important;
+        white-space: nowrap !important; /* 3 */
+      }
+      .sr-only-focusable:focus,
+      .sr-only-focusable:active {
+        clip: auto !important;
+        -webkit-clip-path: none !important;
+        clip-path: none !important;
+        height: auto !important;
+        margin: auto !important;
+        overflow: visible !important;
+        width: auto !important;
+        white-space: normal !important;
+      }
+      .transcription {
+        display: none;
+      }
+
+      .main-nav {
+        display: flex;
+        gap: 1rem;
+      }
+      .my-blocks {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .my-blocks div {
+        width: 10rem;
+        border: solid black 1px;
+        padding: 2rem;
+      }
+      nav ul {
+        list-style-type: none;
+      }
+      .skip-links {
+        margin-bottom: 10px;
+      }
+      #card-1-container {
+        position: relative;
+      }
+      #card-1::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      #card-3 {
+        text-decoration: none;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+      }
+      form label {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      #form-errors {
+        display: none;
+      }
+      
+      *:focus {
+        outline: 2px solid red;
+        outline-offset: 2px;
+        box-shadow: 0 0 0 2px #fff;
+      }
+
+      .check-control {
+        margin-top: 2rem;
+        cursor: pointer;
+        position: relative;
+      }
+      .check-control input[type="checkbox"] {
+        display: none;
+      }
+      .check-control label {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+      }
+      .check-control label::before {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid red;
+      }
+      .check-control label:focus::before {
+        background-color: red;
+        padding: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        padding: 0.5rem;
+        outline: 2px solid white;
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+      <nav
+        class="skip-links"
+        role="navigation"
+        aria-label="Lien d'evitement"
+      >
+        <ul>
+          <li><a href="#main" class="sr-only sr-only-focusable">Aller au contenu</a></li>
+          <li><a href="#footer" class="sr-only sr-only-focusable">Aller au pied de page</a></li>
+        </ul>
+      </nav>
+    <header role="banner">
+      <nav role="navigation" aria-label="Principale">
+        <a href="monsite.com">
+          <img src="./logo.webp" alt="Accueil mon site" width=150 height=60>
+        </a>
+        <ul role="menu" class="main-nav">
+          <li><a aria-current="page">Page 1</a></li>
+          <li><a>Page 2</a></li>
+          <li><a>Page 3</a></li>
+        </ul>
+      </nav>
+      <form role="search">
+        <input type="text" placeholder="rechercher" /><button>ok</button>
+      </form>
+    </header>
+    <main id="main" role="main">
+      <h1>Bonjour</h1>
+      <p>Bienvenue sur mon site super accessible</p>
+      <div class="my-blocks">
+        <div id="card-1-container">
+          <h2>Card 1</h2>
+          Beaucoup de texte Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Delectus facere fugit cupiditate, cum autem natus totam
+          veritatis nostrum reprehenderit aliquam deserunt excepturi ullam amet
+          temporibus suscipit porro deleniti eum saepe!
+          <a id="card-1" href="./card-1">En savoir plus</a>
+        </div>
+        <div id="card-2-container">
+          <h2>Card 2</h2>
+          <p>
+            Beaucoup de texte Lorem, ipsum dolor sit amet consectetur adipisicing
+            elit. aliquam deserunt excepturi ullam amet temporibus suscipit porro
+            deleniti eum saepe! <a id="card-2" href="./card-2">En savoir plus</a>
+          </p>
+        </div>
+        
+        <div>
+          <a id="card-3" href="./card-3" aria-label="En savoir plus sur la card 3">
+            <h2>Card 3</h2>
+            Beaucoup de texte Lorem, ipsum dolor sit amet consectetur adipisicing
+            elit. <a href="#" aria-label="En savoir plus sur la card 3">En savoir plus</a>
+          </a>
+        </div>
+      </div>
+      <img src="./chien.webp" alt="Un chier obeissant">
+      <figure role="figure" aria-label="Mon chat">
+        <img src="./chat.jpg" alt="Mon super chat blanc" />
+        <figcaption>Mon chat</figcaption>
+      </figure>
+      <h2>Titre de niveau 2</h2>
+      <blockquote>Ma citation en block</blockquote>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet commodi amet error, esse est mollitia cum aliquid non! Fugiat ut quia autem molestiae nemo, illo itaque distinctio hic voluptate dolores.</p>
+      <h2>Mon autre itre de niveau 2</h2>
+      Ma liste non ordonné
+      <ol>
+        <li>élément 1</li>
+        <li>élément 2</li>
+        <li>élément 3</li>
+      </ol>
+      <ul>
+        <li>élément 1</li>
+        <li>élément 2</li>
+      </ul>
+      <form id="user-form">
+        <h2>Mon super formulaire accessible</h2>
+        <p>Champs obligatoires sont marqués par *</p>
+        <div id="form-errors" tabindex="-1">
+          Une erreur est survenue
+          <ul>
+            <li><a href="#email">L'email n'est pas renseigné</a></li>
+            <li><a href="#phone">Le télephone n'est pas renseigné</a></li>
+          </ul>
+        </div>
+        <label for="firstname">
+          Prénom
+          <input
+            id="firstname"
+            type="text"
+            name="firstname"
+            autocomplete="given-name"
+          />
+        </label>
+        <label for="lastname">
+          Nom
+          <input
+            id="lastname"
+            type="text"
+            name="lastname"
+            autocomplete="family-name"
+          />
+        </label>
+        <fieldset>
+          <legend>Date de naissance</legend>
+          <label class="birth-item" for="birth-day">
+            Jour 
+            <input
+              id="birth-day"
+              type="number"
+              name="birth-day"
+              title="Jour"
+              autocomplete="bday-day"
+            />
+          </label>
+          <label class="birth-item" for="birth-month">
+            Mois
+            <input
+              id="birth-month"
+              type="number"
+              name="birth-month"
+              title="Mois"
+              autocomplete="bday-month"
+            />
+          </label>
+          <label class="birth-item" for="birth-year">
+            Année
+            <input
+              id="birth-year"
+              type="number"
+              name="birth-year"
+              title="Année"
+              autocomplete="bday-year"
+            />
+          </label>
+          <div class="check-control">
+            <input id="check-1" type="checkbox" class="custom-check">
+            <label for="check-1">Check 1</label>
+          </div>
+        </fieldset>
+        <label for="email">
+          <span aria-hidden="true">*</span>Email (example@test.com)
+          <input
+            id="email"
+            type="email"
+            name="email"
+            autocomplete="email"
+            required
+          />
+        </label>
+        <label for="phone">
+          <span aria-hidden="true">*</span>Télephone (06 05 05 02 23)
+          <input
+            id="phone"
+            type="tel"
+            name="phone"
+            autocomplete="tel"
+            required
+          />
+        </label>
+        <button id="submit-form" type="submit">Valider</button>
+      </form>
+      <h2>Tableau simple</h2>
+      <table>
+        <caption>Fruits et légumes</caption>
+        <thead>
+          <th>Fruits</th>
+          <th>Légumes</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Banane</td>
+            <td>Radis</td>
+          </tr>
+          <tr>
+            <td>Fraise</td>
+            <td>Poireaux</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Tableau complexe</h2>
+      <table>
+        <caption>Fruits et légumes</caption>
+        <thead>
+          <tr>
+            <th id="fruits">Fruits</th>
+            <th id="legumes">Légumes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Banane</td>
+            <td>Radis</td>
+          </tr>
+          <tr>
+            <td>Fraise</td>
+            <td>Poireaux</td>
+          </tr>
+          <tr>
+            <td colspan="2" headers="fruits legumes">Poireaux</td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <video title="Ma vidéo">
+          <source src="https://www.youtube.com/watch?v=qywRhRzkVB4"/>
+        </video>
+        <button class="toggle-transcription" aria-expanded="false">Afficher la transcription</button>
+        <p class="transcription">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam enim sunt aut sapiente doloremque quod sit unde, dolorum perspiciatis totam placeat aliquid dicta id harum quasi iure doloribus sint recusandae.
+        </p>
+      </div>
+    </main>
+    <footer id="footer" role="contentinfo">
+      <a href="...">Plan du site</a>
+      <img src="./banner.webp" alt="">
+    </footer>
+    <script type="">
+      const cardLinkEl = document.getElementById('card-2-container');
+      console.log(cardLinkEl)
+      cardLinkEl.addEventListener('click', function (e) {
+        document.getElementById('card-2').click();
+      })
+
+      const submitBtn = document.getElementById('submit-form');
+
+      submitBtn.addEventListener('click', function(e) {
+        e.preventDefault()
+        e.stopPropagation();
+
+        const formData = new FormData(document.getElementById('user-form'));
+        if (formData.get('email') === "" || formData.get('tel') === "") {
+          const formErrors = document.getElementById('form-errors');
+
+          document.getElementById('email').setAttribute('aria-invalid', true);
+          formErrors.style.display = 'block';
+          formErrors.focus();
+        } else {
+          location.reload()
+        }
+      });
+
+      const transcriptionBtn = document.querySelector('.toggle-transcription');
+      transcriptionBtn.addEventListener('click', function() {
+        const open = transcriptionBtn.getAttribute('aria-expanded') === 'true';
+        transcriptionBtn.setAttribute('aria-expanded', open ? 'false' : 'true')
+        document.querySelector('.transcription').style.display = open ? 'none' : 'block';
+      });
+    </script>
+  </body>
+</html>
